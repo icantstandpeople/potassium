@@ -2,6 +2,8 @@
 
 Potassium is the name of a Team Fortress 2 hack that I am working on.
 
+If you're going to use this for your hack, please give me credits, thanks.
+
 ## Credits: 
 
 * Gir489 - Creating DarkStorm base
