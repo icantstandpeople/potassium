@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Panels.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CDrawManager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Client.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DLLMain.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="VMTHooks.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CSignature.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CNetVars.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CBaseEntity.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CMenu.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Aimbot.cpp">
+      <Filter>Hacks\Aimbot</Filter>
+    </ClCompile>
+    <ClCompile Include="Triggerbot.cpp">
+      <Filter>Hacks\Triggerbot</Filter>
+    </ClCompile>
+    <ClCompile Include="ESP.cpp">
+      <Filter>Hacks\ESP</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc.cpp">
+      <Filter>Hacks\Misc</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CDrawManager.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CGlobalVars.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Client.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="getvfunc.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Panels.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponList.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="VMTHooks.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CSignature.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CNetVars.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="bspflags.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Util.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CMenu.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Aimbot.h">
+      <Filter>Hacks\Aimbot</Filter>
+    </ClInclude>
+    <ClInclude Include="Triggerbot.h">
+      <Filter>Hacks\Triggerbot</Filter>
+    </ClInclude>
+    <ClInclude Include="studio.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ESP.h">
+      <Filter>Hacks\ESP</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc.h">
+      <Filter>Hacks\Misc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{79b023fd-cbc8-41db-bfda-b06ff3b945f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{7561bd3e-f399-43c0-80fd-202de503f606}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hacks">
+      <UniqueIdentifier>{bd4db70f-c9e9-4991-848f-748551954a06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hacks\Aimbot">
+      <UniqueIdentifier>{4f190136-d775-450b-9049-6a6fdd0ab7a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hacks\Triggerbot">
+      <UniqueIdentifier>{d045afc8-c948-46e8-b3fa-9c7469fb9345}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hacks\ESP">
+      <UniqueIdentifier>{3f8592fd-56b1-487a-bf76-227058a23a9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hacks\Misc">
+      <UniqueIdentifier>{338f8ff1-8354-487f-9830-cc45a33039d4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
