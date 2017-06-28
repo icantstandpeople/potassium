@@ -14,7 +14,7 @@ If you're going to use this for your hack, please give me credits, thanks.
 
 * F1ssi0N - Cyberbullying me and for DynVars class
 
-* Diane/BlackFire - Cyberbully and F1ssi0N wannabe
+* Diane/Blackfire - Cyberbully and F1ssi0N wannabe
 
 ## Features:
 
