@@ -23,7 +23,7 @@ If you're going to use this for your hack, please give me credits, thanks.
 * Master Switch - Toggle Aimbot on/off
 * Key - Set a (somewhat) custom key to use for aiming
 * Hitscan - Aim at best available hitbox
-* Hitbox - Choose a hitbox yo uwould prefer to aim at
+* Hitbox - Choose a hitbox you would prefer to aim at
 
 ### Triggerbot
 
