@@ -5,6 +5,14 @@ CAimbot gAim;
 
 void CAimbot::Run(CBaseEntity* pLocal, CUserCmd* pCommand)
 {
+	old_movement_t old_mov = old_movement_t();
+
+	if (gCvars.aimbot_silent) { // only backup the c_usercmd data when it's needed.
+		old_mov.angle = pCommand->viewangles;
+		old_mov.fwd = pCommand->forwardmove;
+		old_mov.sdm = pCommand->sidemove;
+	}
+
 	gCvars.iAimbotIndex = -1;
 
 	if (!gCvars.aimbot_active)
@@ -35,9 +43,16 @@ void CAimbot::Run(CBaseEntity* pLocal, CUserCmd* pCommand)
 
 	ClampAngle(vAngs);
 	gCvars.iAimbotIndex = pEntity->GetIndex();
-	pCommand->viewangles = vAngs;
 
-	gInts.Engine->SetViewAngles(pCommand->viewangles);
+	pCommand->viewangles = vAngs; // always set this cuz otherwise the viewangles will desync.
+
+	if (!gCvars.aimbot_silent) {
+		gInts.Engine->SetViewAngles(pCommand->viewangles);
+	}
+
+	if (gCvars.aimbot_silent) { // apply our movement fix if silent aim is enabled.
+		Util->FixMovementForUserCmd(pCommand, old_mov);
+	}
 
 	if (gCvars.aimbot_autoshoot)
 		pCommand->buttons |= IN_ATTACK;

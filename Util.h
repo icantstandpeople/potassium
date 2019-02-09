@@ -12,6 +12,8 @@ public:
 
 	bool IsHeadshotWeapon(CBaseEntity* pLocal, CBaseCombatWeapon* pWep);
 
+	void FixMovementForUserCmd(CUserCmd* cmd, old_movement_t mov);
+
 	PVOID InitKeyValue();
 };
 

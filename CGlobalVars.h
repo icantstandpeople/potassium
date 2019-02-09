@@ -11,6 +11,7 @@ public:
 	float szsubstest;
 
 	float aimbot_switch;
+	float aimbot_silent;
 	float aimbot_active;
 	float aimbot_key;
 	float aimbot_hitscan;

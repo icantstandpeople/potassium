@@ -72,3 +72,28 @@ PVOID CUtil::InitKeyValue() //Credits f1ssion
 	static Init_t InitKeyValues = (Init_t)dwInit;
 	return InitKeyValues(32);
 }
+
+void CUtil::FixMovementForUserCmd(CUserCmd* cmd, old_movement_t mov) {
+	float deltaView = cmd->viewangles.x - mov.angle.y;
+	float f1;
+	float f2;
+
+	if (mov.angle.y < 0.f)
+		f1 = 360.0f + mov.angle.y;
+	else
+		f1 = mov.angle.y;
+
+	if (cmd->viewangles.y < 0.0f)
+		f2 = 360.0f + cmd->viewangles.y;
+	else
+		f2 = cmd->viewangles.y;
+
+	if (f2 < f1)
+		deltaView = abs(f2 - f1);
+	else
+		deltaView = 360.0f - abs(f1 - f2);
+	deltaView = 360.0f - deltaView;
+
+	cmd->forwardmove = cos(DEG2RAD(deltaView)) * mov.fwd + cos(DEG2RAD(deltaView + 90.f)) * mov.sdm;
+	cmd->sidemove = sin(DEG2RAD(deltaView)) * mov.fwd + sin(DEG2RAD(deltaView + 90.f)) * mov.sdm;
+}

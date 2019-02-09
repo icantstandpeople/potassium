@@ -49,6 +49,12 @@ class CBaseCombatWeapon;
 #define BLU_TEAM 3
 #define RED_TEAM 2
 
+struct old_movement_t {
+	Vector angle;
+	float fwd;
+	float sdm;
+};
+
 typedef struct player_info_s
 {
 	char			name[32];
