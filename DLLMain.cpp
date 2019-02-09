@@ -59,6 +59,7 @@ DWORD WINAPI dwMainThread( LPVOID lpArguments )
 				
 		clientHook->Init(gInts.Client);
 		clientHook->HookMethod(&Hooked_KeyEvent, gOffsets.iKeyEventOffset);
+		clientHook->HookMethod(&Hooked_FrameStage, gOffsets.iFrameStageOffset);
 		clientHook->Rehook();
 
 		clientModeHook->Init(gInts.ClientMode);

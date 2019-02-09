@@ -36,6 +36,8 @@ public:
 	float misc_bunnyhop;
 	float misc_autostrafe;
 	float misc_noisemaker_spam;
+	float misc_anti_anti_aim;
+	float misc_anti_anti_aim_unsafe_x;
 
 	float playerlist_switch;
 	float PlayerMode[64] = {
@@ -49,5 +51,5 @@ public:
 class COffsets
 {
 public:
-	int iKeyEventOffset = 20, iCreateMoveOffset = 21, iPaintTraverseOffset = 41;
+	int iKeyEventOffset = 20, iCreateMoveOffset = 21, iPaintTraverseOffset = 41, iFrameStageOffset = 35;
 };

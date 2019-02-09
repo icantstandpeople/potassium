@@ -26,6 +26,14 @@ int CBaseEntity::GetClassNum()
 	DYNVAR_RETURN(int, this, "DT_TFPlayer", "m_PlayerClass", "m_iClass");
 }
 
+Vector CBaseEntity::GetEyeAngles() {
+	DYNVAR_RETURN(Vector, this, "DT_TFPlayer", "tfnonlocaldata", "m_angEyeAngles[0]");
+}
+
+void CBaseEntity::SetEyeAngles(Vector eye_angle) {
+	*(Vector*)(this + gNetVars.get_offset("DT_TFPlayer", "tfnonlocaldata", "m_angEyeAngles[0]")) = eye_angle;
+}
+
 char* CBaseEntity::szGetClass()
 {
 	DYNVAR(iClass, int, "DT_TFPlayer", "m_PlayerClass", "m_iClass");

@@ -111,6 +111,11 @@ void CCheatMenu::Render(void)
 		i = AddItem(i, " - Bunnyhop", &gCvars.misc_bunnyhop, 0, 1, 1, false);
 		i = AddItem(i, " - Autostrafe", &gCvars.misc_autostrafe, 0, 1, 1, false);
 		i = AddItem(i, " - Noisemaker Spam", &gCvars.misc_noisemaker_spam, 0, 1, 1, false);
+		i = AddItem(i, " - Anti Anti Aim", &gCvars.misc_anti_anti_aim, 0, 1, 1, false);
+
+		if (gCvars.misc_anti_anti_aim) {
+			i = AddItem(i, " - Allow Unsafe Pitch Correction", &gCvars.misc_anti_anti_aim_unsafe_x, 0, 1, 1, false);
+		}
 	}
 
 	iMenuItems = i;

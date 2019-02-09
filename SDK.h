@@ -49,6 +49,26 @@ class CBaseCombatWeapon;
 #define BLU_TEAM 3
 #define RED_TEAM 2
 
+enum ClientFrameStage_t
+{
+	FRAME_UNDEFINED = -1,			// (haven't run any frames yet)
+	FRAME_START,
+
+	// A network packet is being recieved
+	FRAME_NET_UPDATE_START,
+	// Data has been received and we're going to start calling PostDataUpdate
+	FRAME_NET_UPDATE_POSTDATAUPDATE_START,
+	// Data has been received and we've called PostDataUpdate on all data recipients
+	FRAME_NET_UPDATE_POSTDATAUPDATE_END,
+	// We've received all packets, we can now do interpolation, prediction, etc..
+	FRAME_NET_UPDATE_END,
+
+	// We're about to start rendering the scene
+	FRAME_RENDER_START,
+	// We've finished rendering the scene.
+	FRAME_RENDER_END
+};
+
 struct old_movement_t {
 	Vector angle;
 	float fwd;
@@ -208,6 +228,8 @@ public:
 	Vector GetEyePosition(); //yeah i know its actually view offset, but nobody will notice since you guys are just here to paste
 	Vector GetAbsEyePosition(); //Without origin added, although you could just subtract origin, tbh idk why i have this
 	Vector GetHitboxPosition(int iHitbox);
+	Vector GetEyeAngles();
+	void SetEyeAngles(Vector eye_angle);
 };
 
 class CBaseCombatWeapon : public CBaseEntity

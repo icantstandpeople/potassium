@@ -4,6 +4,7 @@
 #include "Aimbot.h"
 #include "Triggerbot.h"
 #include "Misc.h"
+#include "AntiAntiAim.h"
 
 //============================================================================================
 bool __fastcall Hooked_CreateMove(PVOID ClientMode, int edx, float input_sample_frametime, CUserCmd* pCommand)
@@ -86,3 +87,21 @@ int __fastcall Hooked_KeyEvent(PVOID CHLClient, int edx, int eventcode, int keyn
 	VMTManager &hook = VMTManager::GetHook(CHLClient); // Get a pointer to the instance of your VMTManager with the function GetHook.
 	return hook.GetMethod<int(__thiscall *)(PVOID, int, int, const char *)>(gOffsets.iKeyEventOffset)(CHLClient, eventcode, keynum, currentBinding); // Call the original.
 }
+//============================================================================================
+void __fastcall Hooked_FrameStage(PVOID CHLClient, int edx, ClientFrameStage_t stage) {
+	VMTManager& hook = VMTManager::GetHook(CHLClient);
+
+	bool frame_modify = true;
+
+	switch (stage) {
+	case FRAME_NET_UPDATE_POSTDATAUPDATE_START:
+		gAntiAntiAim.PostDataUpdateStart(); // this is acting as a simple anti anti aim, do not expect too much out of this.
+		break;
+	default:
+		frame_modify = false;
+		break;
+	}
+
+	hook.GetMethod<void(__thiscall*)(PVOID, ClientFrameStage_t)>(gOffsets.iFrameStageOffset)(CHLClient, stage); // call the original but don't return, since this is a void.
+}
+//============================================================================================
