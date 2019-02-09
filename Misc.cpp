@@ -5,16 +5,31 @@ CMisc gMisc;
 
 void CMisc::Run(CBaseEntity* pLocal, CUserCmd* pCommand)
 {
+	if (gCvars.misc_bunnyhop) {
+		// say bye to stick's gay 1 line bunny hop, XD, owned!
+		// credits: josh
+		static bool firstjump = 0, fakejmp;
+
+		if (pCommand->buttons & IN_JUMP)
+			if (!firstjump)
+				firstjump = fakejmp = 1;
+			else if (!(pLocal->GetFlags() & FL_ONGROUND))
+				if (fakejmp)
+					fakejmp = 0;
+				else
+					pCommand->buttons &= ~IN_JUMP;
+			else
+				fakejmp = 1;
+		else
+			firstjump = 0;
+	}
+
 	if (!(pLocal->GetFlags() & FL_ONGROUND) && pCommand->buttons & IN_JUMP)
 	{
 		//Autostrafe	
 		if (gCvars.misc_autostrafe)
 			if (pCommand->mousedx > 1 || pCommand->mousedx < -1)  //> 1 < -1 so we have some wiggle room
 				pCommand->sidemove = pCommand->mousedx > 1 ? 450.f : -450.f;
-
-		//Bunnyhop
-		if (gCvars.misc_bunnyhop)
-			pCommand->buttons &= ~IN_JUMP;
 	}
 
 	if (gCvars.misc_noisemaker_spam)
