@@ -34,7 +34,7 @@ void __fastcall Hooked_PaintTraverse( PVOID pPanels, int edx, unsigned int vguiP
 
 			if( gInts.Engine->IsDrawingLoadingImage() || !gInts.Engine->IsInGame( ) || !gInts.Engine->IsConnected() || gInts.Engine->Con_IsVisible( ) )
 			{
-				gDrawManager.DrawString(5, 5, Color::White(), "potassium");
+				gDrawManager.DrawString(5, 5, Color::White(), "Polly.xyz");
 				return; //No need to draw the rest.
 			}
 
