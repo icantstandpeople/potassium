@@ -139,7 +139,7 @@ void CCheatMenu::DrawMenu(void)
 	gDrawManager.OutlineRect(x - 1, (y - (h + 4)) - 1, w + 2, (iMenuItems * h + 21) + 2, Color(0, 0, 0, 255));
 	gDrawManager.OutlineRect(x + 1, (y - (h + 4)) + 1, w - 2, (iMenuItems * h + 21) - 2, Color(0, 0, 0, 255));
 
-	gDrawManager.DrawString(x + 4, y - 16, clrColor, "potassium menu");
+	gDrawManager.DrawString(x + 4, y - 16, clrColor, "Polly.xyz");
 
 	for (int i = 0; i < iMenuItems; i++)
 	{
